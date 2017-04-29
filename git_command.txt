@@ -1,0 +1,20 @@
+Git Command :
+1. Menambahkan file yang baru ditambahkan/dirubah ke lokal
+	git add -A 	=> -A (All/Semua)
+2. Menyimpan file yang sudah ditambahkan ke lokal
+	git commit -m " pesan perubahan "
+3. Menyimpan file hasi perubahan ke Server
+	git push origin master
+4. Menarik hasil perubahan yang ada di server ke lokal
+	git pull origin
+
+----------------------------------------------------------------------------------------
+Tambahan
+1. Cek status perubahan
+	git status
+2. Clonning/download project dari server
+	git clone ------------.git
+	            <your repositories>
+3. Set origin
+	git remot set-url origin -----------.git
+			<your repositories>
