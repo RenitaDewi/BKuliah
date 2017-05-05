@@ -14,7 +14,7 @@ $conn = mysql_connect("localhost","root","root")
  */
 
 $databaseHost = 'localhost';
-$databaseName = 'test2';
+$databaseName = 'BKuliah';
 $databaseUsername = 'root';
 $databasePassword = '';
 
