@@ -10,7 +10,8 @@ include("connection.php");
 
 if(isset($_POST['submit'])) {
 	$nama = $_POST['nama'];
-	$alamat = $_POST['email'];
+	$alamat = $_POST['alamat'];
+	$no_telp = $_POST['no_telp'];
 	$user = $_POST['nrp'];
 	$pass = $_POST['kode_pin'];
 
@@ -19,7 +20,7 @@ if(isset($_POST['submit'])) {
 		echo "<br/>";
 		echo "<a href='register.php'>Go back</a>";
 	} else {
-		mysqli_query($mysqli, "INSERT INTO mahasiswa(nama, email, nrp, kode_pin) VALUES('$nama', '$alamat', '$user', md5('$pass'))")
+		mysqli_query($mysqli, "INSERT INTO mahasiswa(nama, alamat,no_telp, nrp, kode_pin) VALUES('$nama', '$alamat','$no_telp', '$user', md5('$pass'))")
 			or die("Could not execute the insert query.");
 			
 		echo "Registration successfully";
@@ -32,12 +33,16 @@ if(isset($_POST['submit'])) {
 	<form name="form1" method="post" action="">
 		<table width="75%" border="0">
 			<tr> 
-				<td width="10%">Full Name</td>
+				<td width="10%">Full Name</td>  
 				<td><input type="text" name="nama"></td>
 			</tr>
 			<tr> 
-				<td>Email</td>
-				<td><input type="text" name="email"></td>
+				<td>Alamat</td>
+				<td><input type="text" name="alamat"></td>
+			</tr>		
+			<tr> 
+				<td>Nomor Telpon</td>
+				<td><input type="text" name="no_telp"></td>
 			</tr>			
 			<tr> 
 				<td>Nrp</td>

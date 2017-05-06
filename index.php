@@ -7,7 +7,6 @@
 
 <body>
 	<div id="header">
-		Hello Stalker !<br>
 		Welcome to my page!
 	</div>
 	<?php
@@ -18,7 +17,7 @@
 				
 		Welcome <?php echo $_SESSION['nrp'] ?> ! <a href='logout.php'>Logout</a><br/>
 		<br/>
-		<a href='view.php'>View and Add Matakuliah</a>
+		<a href='view.php'>View and Add Products</a>
 		<br/><br/>
 	<?php	
 	} else {
@@ -27,7 +26,7 @@
 	}
 	?>
 	<div id="footer">
-		Created by <a href="https://dewacoding.wordpress.com/about/" title="BKuliah">BKuliah</a>
+		Created by <a href="https://dewacoding.wordpress.com/about/" title="Kurnia Ramadhan Putra">Kurnia Ramadhan Putra</a>
 	</div>
 </body>
 </html>
