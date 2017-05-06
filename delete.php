@@ -11,10 +11,10 @@ if(!isset($_SESSION['valid'])) {
 include("connection.php");
 
 //getting id of the data from url
-$id = $_GET['id'];
+$nrp = $_GET['nrp'];
 
 //deleting the row from table
-$result=mysqli_query($mysqli, "DELETE FROM products WHERE id=$id");
+$result=mysqli_query($mysqli, "DELETE FROM mahasiswa WHERE nrp=$nrp");
 
 //redirecting to the display page (view.php in our case)
 header("Location:view.php");

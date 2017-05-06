@@ -12,10 +12,10 @@
 	<?php
 	if(isset($_SESSION['valid'])) {			
 		include("connection.php");					
-		$result = mysqli_query($mysqli, "SELECT * FROM login");
+		$result = mysqli_query($mysqli, "SELECT * FROM mahasiswa");
 	?>
 				
-		Welcome <?php echo $_SESSION['name'] ?> ! <a href='logout.php'>Logout</a><br/>
+		Welcome <?php echo $_SESSION['nrp'] ?> ! <a href='logout.php'>Logout</a><br/>
 		<br/>
 		<a href='view.php'>View and Add Products</a>
 		<br/><br/>

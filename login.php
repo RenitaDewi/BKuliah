@@ -10,24 +10,24 @@
 include("connection.php");
 
 if(isset($_POST['submit'])) {
-	$user = mysqli_real_escape_string($mysqli, $_POST['username']);
-	$pass = mysqli_real_escape_string($mysqli, $_POST['password']);
+	$user = mysqli_real_escape_string($mysqli, $_POST['nrp']);
+	$pass = mysqli_real_escape_string($mysqli, $_POST['kode_pin']);
 
 	if($user == "" || $pass == "") {
 		echo "Either username or password field is empty.";
 		echo "<br/>";
 		echo "<a href='login.php'>Go back</a>";
 	} else {
-		$result = mysqli_query($mysqli, "SELECT * FROM login WHERE username='$user' AND password=md5('$pass')")
+		$result = mysqli_query($mysqli, "SELECT * FROM mahasiswa WHERE nrp='$user' AND kode_pin=md5('$pass')")
 					or die("Could not execute the select query.");
 		
 		$row = mysqli_fetch_assoc($result);
 		
 		if(is_array($row) && !empty($row)) {
-			$validuser = $row['username'];
+			$validuser = $row['nrp'];
 			$_SESSION['valid'] = $validuser;
-			$_SESSION['name'] = $row['name'];
-			$_SESSION['id'] = $row['id'];
+			$_SESSION['nrp'] = $row['nrp'];
+			$_SESSION['kode_pin'] = $row['kode_pin'];
 		} else {
 			echo "Invalid username or password.";
 			echo "<br/>";
@@ -45,11 +45,11 @@ if(isset($_POST['submit'])) {
 		<table width="75%" border="0">
 			<tr> 
 				<td width="10%">Username</td>
-				<td><input type="text" name="username"></td>
+				<td><input type="text" name="nrp"></td>
 			</tr>
 			<tr> 
 				<td>Password</td>
-				<td><input type="password" name="password"></td>
+				<td><input type="password" name="kode_pin"></td>
 			</tr>
 			<tr> 
 				<td>&nbsp;</td>

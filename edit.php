@@ -14,27 +14,23 @@ if(isset($_POST['update']))
 {	
 	$id = $_POST['id'];
 	
-	$name = $_POST['name'];
-	$qty = $_POST['qty'];
-	$price = $_POST['price'];	
+	$nama_mtk = $_POST['mtk'];
+	$sks = $_POST['sks'];	
 	
 	// checking empty fields
-	if(empty($name) || empty($qty) || empty($price)) {
+	if(empty($nama_mtk) || empty($sks) ) {
 				
-		if(empty($name)) {
-			echo "<font color='red'>Name field is empty.</font><br/>";
+		if(empty($nama_mtk)) {
+			echo "<font color='red'>Matakuliah field is empty.</font><br/>";
 		}
 		
-		if(empty($qty)) {
-			echo "<font color='red'>Quantity field is empty.</font><br/>";
+		if(empty($sks)) {
+			echo "<font color='red'>SKS field is empty.</font><br/>";
 		}
 		
-		if(empty($price)) {
-			echo "<font color='red'>Price field is empty.</font><br/>";
-		}		
 	} else {	
 		//updating the table
-		$result = mysqli_query($mysqli, "UPDATE products SET name='$name', qty='$qty', price='$price' WHERE id=$id");
+		$result = mysqli_query($mysqli, "UPDATE products SET name='$nama_mtk', qty='$sks' WHERE id=$id");
 		
 		//redirectig to the display page. In our case, it is view.php
 		header("Location: view.php");
@@ -50,9 +46,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM products WHERE id=$id");
 
 while($res = mysqli_fetch_array($result))
 {
-	$name = $res['name'];
-	$qty = $res['qty'];
-	$price = $res['price'];
+	$name = $res['mtk'];
+	$qty = $res['sks'];
 }
 ?>
 <html>
@@ -67,19 +62,15 @@ while($res = mysqli_fetch_array($result))
 	<form name="form1" method="post" action="edit.php">
 		<table border="0">
 			<tr> 
-				<td>Name</td>
-				<td><input type="text" name="name" value="<?php echo $name;?>"></td>
+				<td>Matakuliah</td>
+				<td><input type="text" name="mtk" value="<?php echo $name;?>"></td>
 			</tr>
 			<tr> 
-				<td>Quantity</td>
-				<td><input type="text" name="qty" value="<?php echo $qty;?>"></td>
-			</tr>
-			<tr> 
-				<td>Price</td>
-				<td><input type="text" name="price" value="<?php echo $price;?>"></td>
+				<td>SKS</td>
+				<td><input type="text" name="sks" value="<?php echo $qty;?>"></td>
 			</tr>
 			<tr>
-				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
+				<td><input type="hidden" name="id" value=<?php echo $_GET['nrp'];?>></td>
 				<td><input type="submit" name="update" value="Update"></td>
 			</tr>
 		</table>
