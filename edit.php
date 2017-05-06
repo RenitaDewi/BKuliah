@@ -12,15 +12,15 @@ include_once("connection.php");
 
 if(isset($_POST['update']))
 {	
-	$id = $_POST['id'];
+	$nrp = $_POST['nrp'];
 	
-	$nama_mtk = $_POST['mtk'];
+	$nama_mtk = $_POST['nama_mk'];
 	$sks = $_POST['sks'];	
 	
 	// checking empty fields
-	if(empty($nama_mtk) || empty($sks) ) {
+	if(empty($nama_mk) || empty($sks) ) {
 				
-		if(empty($nama_mtk)) {
+		if(empty($nama_mk)) {
 			echo "<font color='red'>Matakuliah field is empty.</font><br/>";
 		}
 		
@@ -30,7 +30,7 @@ if(isset($_POST['update']))
 		
 	} else {	
 		//updating the table
-		$result = mysqli_query($mysqli, "UPDATE products SET name='$nama_mtk', qty='$sks' WHERE id=$id");
+		$result = mysqli_query($mysqli, "UPDATE products SET name='$nama_mk', qty='$sks' WHERE id=$id");
 		
 		//redirectig to the display page. In our case, it is view.php
 		header("Location: view.php");
@@ -39,10 +39,10 @@ if(isset($_POST['update']))
 ?>
 <?php
 //getting id from url
-$id = $_GET['id'];
+$nrp = $_GET['nrp'];
 
 //selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM products WHERE id=$id");
+$result = mysqli_query($mysqli, "SELECT * FROM matakuliah WHERE nrp=$nrp");
 
 while($res = mysqli_fetch_array($result))
 {
