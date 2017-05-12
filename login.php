@@ -2,10 +2,13 @@
 <html>
 <head>
 	<title>Login</title>
+	<link href="style1.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<a href="index.php">Home</a> <br />
+<div id="header">
+<a id="menu" href="index.php">Home</a> <br />
+</div>
 <?php
 include("connection.php");
 
@@ -40,20 +43,22 @@ if(isset($_POST['submit'])) {
 	}
 } else {
 ?>
-	<p><font size="+2">Login</font></p>
-	<form name="form1" method="post" action="">
-		<table width="75%" border="0">
-			<tr> 
+	<div id="register">
+	<p ><font size="+2">Silahkan Login Terlebih Dahulu</font></p>
+	</div>
+	<form name="form1" method="post" action="" style="margin-top:40px;">
+		<table width="15%" border="0" align="center">
+			<tr height="40px"> 
 				<td width="10%">Username</td>
 				<td><input type="text" name="nrp"></td>
 			</tr>
-			<tr> 
+			<tr height="40px"> 
 				<td>Password</td>
 				<td><input type="password" name="kode_pin"></td>
 			</tr>
-			<tr> 
+			<tr height="40px"> 
 				<td>&nbsp;</td>
-				<td><input type="submit" name="submit" value="Submit"></td>
+				<td><input id="button" type="submit" name="submit" value="Login"></td>
 			</tr>
 		</table>
 	</form>

@@ -1,25 +1,29 @@
 <html>
 <head>
 	<title>Add Data</title>
+	<link href="style1.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-	<a href="index.php">Home</a> | <a href="view.php">View Products</a> | <a href="logout.php">Logout</a>
-	<br/><br/>
-
+<div id="header">
+	<a id="menu" href="index.php">Home</a>  <a id="menu" href="view.php">View Matakuliah</a>  <a id="menu" href="logout.php">Logout</a>
+	</div>
+<div id="register"> 
+	<p ><font size="+2">Tambahkan Matakuliah</font></p>
+	</div>
 	<form action="add.php" method="post" name="form1">
-		<table width="25%" border="0">
-			<tr> 
+		<table width="25%" border="0" align="center" style="margin-top:40px;">
+			<tr height="40px"> 
 				<td>Matakuliah</td>
 				<td><input type="text" name="nama_mk"></td>
 			</tr>
-			<tr> 
+			<tr height="40px"> 
 				<td>sks</td>
 				<td><input type="text" name="sks"></td>
 			</tr>
-			
+			<tr height="40px">
 				<td></td>
-				<td><input type="submit" name="Submit" value="Add"></td>
+				<td><input id="button" type="submit" name="Submit" value="Add"></td>
 			</tr>
 		</table>
 	</form>
