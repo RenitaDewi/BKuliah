@@ -20,7 +20,7 @@
 	?>
 				
 		  <div id='header'>
-	 <a id="menu" href='view.php'>View and Add Products</a><a id="menu" href='logout.php'>LogOut</a> 
+	 <a id="menu" href='view.php'>View and Add Matakuliah</a><a id="menu" href='logout.php'>LogOut</a> 
 	
 	</div>"
 		

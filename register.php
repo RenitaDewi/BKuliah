@@ -20,16 +20,28 @@ if(isset($_POST['submit'])) {
 	$pass = $_POST['kode_pin'];
 
 	if($user == "" || $pass == "" || $nama == "" || $alamat == "") {
-		echo "All fields should be filled. Either one or many fields are empty.";
+		echo "
+		<div id='text'>
+		All fields should be filled. Either one or many fields are empty.
+		</div>";
 		echo "<br/>";
 		echo "<a href='register.php'>Go back</a>";
 	} else {
 		mysqli_query($mysqli, "INSERT INTO mahasiswa(nama, alamat,no_telp, nrp, kode_pin) VALUES('$nama', '$alamat','$no_telp', '$user', md5('$pass'))")
-			or die("Could not execute the insert query.");
+			or die("
+			<div id='text>'
+			Could not execute the insert query.
+			</div>");
 			
-		echo "Registration successfully";
+		echo "
+		<div id='text1'>
+		<p>Registration successfully</p>
+		</div>";
 		echo "<br/>";
-		echo "<a href='login.php'>Login</a>";
+		echo "
+		<div id='log'>
+		<a href='login.php'>Login</a>
+		</div>";
 	}
 } else {
 ?>
@@ -58,7 +70,7 @@ if(isset($_POST['submit'])) {
 				<td>Kode Pin</td>
 				<td><input type="password" name="kode_pin"></td>
 			</tr>
-			<tr height="40px"> 
+			<tr height="80px"> 
 				<td>&nbsp;</td>
 				<td><input id="button" type="submit" name="submit" value="SignUp"></td>
 			</tr>

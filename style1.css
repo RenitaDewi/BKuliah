@@ -7,11 +7,10 @@ body {
 }
 
 #header {
-	width: 1270px;
-	color: maroon;
+	width: 1290px;
+	color: #FFFFCC;
 	font-size: 20px;
 	padding: 10px 10px 10px 0px;
-	margin-bottom: 15px;
 	border: 1px solid;
 	background-color:#33FF33;
 }
@@ -22,16 +21,46 @@ body {
 	text-align:center;
 }
 #register{
-	margin-top:20px;
-	margin-left:450px;
-	border:1px solid;
+	border:1px solid green;
 	height:60px;
-	width:400px;
+	width:1290px;
 	text-align:center;
+	color:white;
+	background-color:#CCCCCC;
+	padding: 10px 10px 10px 0px;
 }
 #button{
+	background-color:#33FF33;
 	width:160px;
-	color:white;
+	height:40px;
+	color:#FFFFCC;
+
+	
+}
+#text{
+	width:400px;
+	height:60px;
+	border:1px solid;
+	background-color:#FFCCCC;
+	font-weight:bold;
+	font-size:20;
+	color:red;
+	margin-left:450;
+	margin-top:60px;
+	text-align:center;
+	
+}
+#text1{
+	width:400px;
+	height:60px;
+	border:1px solid;
+	background-color:#CCFF99;
+	font-weight:bold;
+	font-size:20;
+	color:#00FF33;
+	margin-left:450;
+	margin-top:60px;
+	text-align:center;
 	
 }
 #menu{
@@ -41,10 +70,17 @@ body {
     padding: 9px 20px;
     text-decoration: none
 }
+#log{
+	 color: #00FF33;
+    font: 14px arial, verdana, sans-serif;
+    font-weight: bold;
+    padding: 9px 20px;
+    text-decoration: none;
+}
 
 #footer {
 	border-top: 1px solid green;
-	margin-top: 20px;
+	margin-top: 120px;
 	color: #336699;
 	padding-top: 10px;	
 }

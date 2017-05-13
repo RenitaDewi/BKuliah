@@ -17,12 +17,18 @@ if(isset($_POST['submit'])) {
 	$pass = mysqli_real_escape_string($mysqli, $_POST['kode_pin']);
 
 	if($user == "" || $pass == "") {
-		echo "Either username or password field is empty.";
+		echo "
+		<div id='text'>
+<p >Either username or password field is empty.</p>
+</div>";
 		echo "<br/>";
 		echo "<a href='login.php'>Go back</a>";
 	} else {
 		$result = mysqli_query($mysqli, "SELECT * FROM mahasiswa WHERE nrp='$user' AND kode_pin=md5('$pass')")
-					or die("Could not execute the select query.");
+					or die("
+					<div id='text'>
+					<p >Could not execute the select query.</p>
+					</div>");
 		
 		$row = mysqli_fetch_assoc($result);
 		
@@ -32,7 +38,9 @@ if(isset($_POST['submit'])) {
 			$_SESSION['nrp'] = $row['nrp'];
 			$_SESSION['kode_pin'] = $row['kode_pin'];
 		} else {
-			echo "Invalid username or password.";
+			
+			echo "<div id='text'><p >Sorry,,Username or Password didn't match </p>
+			</div>";
 			echo "<br/>";
 			echo "<a href='login.php'>Go back</a>";
 		}
@@ -56,7 +64,7 @@ if(isset($_POST['submit'])) {
 				<td>Password</td>
 				<td><input type="password" name="kode_pin"></td>
 			</tr>
-			<tr height="40px"> 
+			<tr height="80px"> 
 				<td>&nbsp;</td>
 				<td><input id="button" type="submit" name="submit" value="Login"></td>
 			</tr>

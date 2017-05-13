@@ -48,7 +48,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM matakuliah WHERE nrp=".$_SESSION[
 		<tr> 
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
-				<td height='80px;'><input id="button" type="submit"  name="submit" value="ADD New Data" ></td>
+				<td height='100px;'><input id="button" type="submit"  name="submit" value="ADD New Data" ></td>
 			</tr>
 	</table>		
 	</form>
