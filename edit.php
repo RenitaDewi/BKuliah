@@ -8,7 +8,7 @@ if(!isset($_SESSION['valid'])) {
 
 <?php
 // including the database connection file
-include_once("connection.php");
+include("connection.php");
 
 if(isset($_POST['update']))
 {	
@@ -16,6 +16,7 @@ if(isset($_POST['update']))
 	
 	$nama_mk = $_POST['nama_mk'];
 	$sks = $_POST['sks'];	
+	$kode_mk = $_SESSION['kode_mk'];
 	
 	// checking empty fields
 	if(empty($nama_mk) || empty($sks) ) {
@@ -30,7 +31,7 @@ if(isset($_POST['update']))
 		
 	} else {	
 		//updating the table
-		$result = mysqli_query($mysqli, "UPDATE matakuliah SET nama_mk='$nama_mk', sks='$sks' WHERE nrp=$nrp");
+		$result = mysqli_query($mysqli, "UPDATE matakuliah SET nama_mk='$nama_mk', sks='$sks' WHERE nrp=$nrp and kode_mk=$kode_mk");
 		
 		//redirectig to the display page. In our case, it is view.php
 		header("Location: view.php");
@@ -39,7 +40,7 @@ if(isset($_POST['update']))
 ?>
 <?php
 //getting id from url
-$nrp = $_GET['nrp'];
+$nrp = $_SESSION['nrp'];
 
 //selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM matakuliah WHERE nrp=$nrp");
@@ -70,7 +71,7 @@ while($res = mysqli_fetch_array($result))
 				<td><input type="text" name="sks" value="<?php echo $sks;?>"></td>
 			</tr>
 			<tr>
-				<td><input type="hidden" name="nrp" value=<?php echo $_GET['nrp'];?>></td>
+				<td><input type="hidden" name="nrp" value=<?php echo $_SESSION['nrp'];?>></td>
 				<td><input type="submit" name="update" value="Update"></td>
 			</tr>
 		</table>

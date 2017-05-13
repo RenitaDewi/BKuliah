@@ -32,6 +32,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM matakuliah WHERE nrp=".$_SESSION[
 <form method='post' action='add.html' onsubmit='return validasi(this)' name='form'>
 	<table width='50%' border=0 align="center" style="margin-top:40px;">
 		<tr width='10%' bgcolor='#CCCCCC'>
+			<td>Kode Matakuliah</td>
 			<td>Matakuliah</td>
 			<td>SKS</td>
 			<td>Update</td>
@@ -39,16 +40,18 @@ $result = mysqli_query($mysqli, "SELECT * FROM matakuliah WHERE nrp=".$_SESSION[
 		<?php
 		while($res = mysqli_fetch_array($result)) {		
 			echo "<tr>";
+			echo "<td>".$res['kode_mk']."</td>";
 			echo "<td>".$res['nama_mk']."</td>";
 			echo "<td>".$res['sks']."</td>";	
 			echo "<td><a href=\"edit.php?id=$res[nrp]\">Edit</a> | <a href=\"delete.php?id=$res[nrp]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
+		$_SESSION['kode_mk'] =$res['kode_mk'];
 		}
 		
 		?>
 		<tr> 
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
-				<td height='100px;'><input id="button" type="submit"  name="submit" value="ADD New Data" ></td>
+				<td height='80px;'><input id="button" type="submit"  name="submit" value="ADD New Data" ></td>
 			</tr>
 	</table>		
 	</form>
