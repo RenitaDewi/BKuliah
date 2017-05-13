@@ -8,12 +8,11 @@ body {
 
 #header {
 	width: 1350px;
-	color: maroon;
+	color: #FF3333;
 	font-size: 20px;
 	padding: 10px 10px 10px 0px;
-	margin-bottom: 15px;
 	border: 1px solid;
-	background-color:#FF3333;
+	background-color#FF3333;
 }
 #body1 {
 	width:700px;
@@ -24,21 +23,23 @@ body {
 #register{
 	border:1px solid red;
 	height:60px;
-	width:1350px;
+	width:1290px;
 	text-align:center;
-	color:red;
-	background-color:#FFFFF;
+	color:white;
+	background-color:#CCCCCC;
 	padding: 10px 10px 10px 0px;
 }
 #button{
-	background-color: #FF3333;
+	background-color#FF3333;
 	width:160px;
 	height:40px;
 	color:#FFFFCC;
+
+	
 }
 #text{
 	width:400px;
-	height:40px;
+	height:60px;
 	border:1px solid;
 	background-color:#FFCCCC;
 	font-weight:bold;
@@ -51,27 +52,34 @@ body {
 }
 #text1{
 	width:400px;
-	height:40px;
+	height:60px;
 	border:1px solid;
-	background-color:#FF3333;
+	background-color:#CCFF99;
 	font-weight:bold;
 	font-size:20;
-	color:#FF3333;
+	color:#00FF33;
 	margin-left:450;
-	margin-top:40px;
+	margin-top:60px;
 	text-align:center;
 	
 }
 #menu{
 	color: #fff;
-    font: 16px serif, verdana, sans-serif;
+    font: 24px serif, verdana, sans-serif;
     padding: 9px 20px;
     text-decoration: none
+}
+#log{
+	 color: #00FF33;
+    font: 14px arial, verdana, sans-serif;
+    font-weight: bold;
+    padding: 9px 20px;
+    text-decoration: none;
 }
 
 #footer {
 	border-top: 1px solid red;
-	margin-top: 20px;
-	color: #FF0000;
+	margin-top: 120px;
+	color: #FF3333;
 	padding-top: 10px;	
 }

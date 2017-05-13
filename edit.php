@@ -54,25 +54,30 @@ while($res = mysqli_fetch_array($result))
 <html>
 <head>	
 	<title>Edit Data</title>
+		<link href="style1.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-	<a href="index.php">Home</a> | <a href="view.php">View Data Matakuliah</a> | <a href="logout.php">Logout</a>
-	<br/><br/>
-	
-	<form name="form1" method="post" action="edit.php">
-		<table border="0">
-			<tr> 
+ <div id="header" >
+ 
+	<a id="menu" href="index.php">Home</a> | <a id="menu" href="view.php">View Data Matakuliah</a> | <a id="menu" href="logout.php">Logout</a>
+</div>
+	<div id="register">
+	<p ><font size="+2">Silahkan Ubah Data</font></p>
+	</div>
+	<form name="form1" method="post" action="edit.php" style="margin-top:40px;">
+		<table width="20%" border="0" align="center">
+			<tr height="40px"> 
 				<td>Matakuliah</td>
 				<td><input type="text" name="nama_mk" value="<?php echo $nama_mk;?>"></td>
 			</tr>
-			<tr> 
+			<tr height="40px"> 
 				<td>SKS</td>
 				<td><input type="text" name="sks" value="<?php echo $sks;?>"></td>
 			</tr>
-			<tr>
+			<tr height="80px">
 				<td><input type="hidden" name="nrp" value=<?php echo $_SESSION['nrp'];?>></td>
-				<td><input type="submit" name="update" value="Update"></td>
+				<td><input id="button" type="submit" name="update" value="Update"></td>
 			</tr>
 		</table>
 	</form>

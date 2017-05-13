@@ -22,25 +22,25 @@ if(isset($_POST['submit'])) {
 	if($user == "" || $pass == "" || $nama == "" || $alamat == "") {
 		echo "
 		<div id='text'>
-		All fields should be filled. Either one or many fields are empty.
+		Lengkapi data pendaftaran.
 		</div>";
 		echo "<br/>";
-		echo "<a href='register.php'>Go back</a>";
+		echo "<a href='register.php'>Kembali</a>";
 	} else {
 		mysqli_query($mysqli, "INSERT INTO mahasiswa(nama, alamat,no_telp, nrp, kode_pin) VALUES('$nama', '$alamat','$no_telp', '$user', md5('$pass'))")
 			or die("
 			<div id='text>'
-			Could not execute the insert query.
+			Query tidak bisa di eksekusi.
 			</div>");
 			
 		echo "
-		<div id='text1'>
-		<p>Registration successfully</p>
+		<div id='text'>
+		<p>Pendaftaran Berhasil!</p>
 		</div>";
 		echo "<br/>";
 		echo "
 		<div id='log'>
-		<a href='login.php'>Login</a>
+		<a href='login.php'>Daftar</a>
 		</div>";
 	}
 } else {
@@ -72,7 +72,7 @@ if(isset($_POST['submit'])) {
 			</tr>
 			<tr height="80px"> 
 				<td>&nbsp;</td>
-				<td><input id="button" type="submit" name="submit" value="SignUp"></td>
+				<td><input id="button" type="submit" name="submit" value="Daftar"></td>
 			</tr>
 		</table>
 	</form>

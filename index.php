@@ -22,22 +22,22 @@
 		  <div id='header'>
 	 <a id="menu" href='view.php'>View and Add Matakuliah</a><a id="menu" href='logout.php'>LogOut</a> 
 	
-	</div>"
-		
+	</div>
+	
 		<td  style='width:400px;'>	<img src='b.png' style=' height:400px; margin-left:350px;'> </td>
 	<?php	
 	} else {
-		echo "<div id='header'>
-	<a id='menu' href='login.php'>Login</a>  <a id='menu' href='register.php'>Register</a>
+	echo "<div id='header'>
+	<a id='menu' href='login.php'>Masuk</a> <a id='menu'> | </a>  <a id='menu' href='register.php'>Daftar</a>
 	
 	</div>";
-	echo "<td style='width:400px;'>	<img src='a.bmp' style=' height:400px;'> </td>";
-	 echo "<td ><p id='body1'>	Welcome to my page! </p></td>";
+	echo "<td style='width:400px;'>	<img src='a.png' style=' height:400px;'> </td>";
+	echo "<td style='width:400px;'>	<img src='b.png' style=' height:400px;'> </td>";
 		}
 	?>
 		</table>
 	<div id="footer">
-		Created by <a href="https://dewacoding.wordpress.com/about/" title="Kurnia Ramadhan Putra">Kurnia Ramadhan Putra</a>
+		Created by <a  title="B Kuliah">B Kuliah</a>
 	</div>
 </body>
 </html>

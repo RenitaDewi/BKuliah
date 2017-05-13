@@ -19,15 +19,15 @@ if(isset($_POST['submit'])) {
 	if($user == "" || $pass == "") {
 		echo "
 		<div id='text'>
-<p >Either username or password field is empty.</p>
+<p>Isi terlebih dahulu Username dan Password.</p>
 </div>";
 		echo "<br/>";
-		echo "<a href='login.php'>Go back</a>";
+		echo "<a href='login.php'>Kembali</a>";
 	} else {
 		$result = mysqli_query($mysqli, "SELECT * FROM mahasiswa WHERE nrp='$user' AND kode_pin=md5('$pass')")
 					or die("
 					<div id='text'>
-					<p >Could not execute the select query.</p>
+					<p >Query tidak bisa di eksekusi.</p>
 					</div>");
 		
 		$row = mysqli_fetch_assoc($result);
@@ -39,10 +39,10 @@ if(isset($_POST['submit'])) {
 			$_SESSION['kode_pin'] = $row['kode_pin'];
 		} else {
 			
-			echo "<div id='text'><p >Sorry,,Username or Password didn't match </p>
+			echo "<div id='text'><p >Sorry,Username / Password tidak cocok.</p>
 			</div>";
 			echo "<br/>";
-			echo "<a href='login.php'>Go back</a>";
+			echo "<a href='login.php'>Kembali</a>";
 		}
 
 		if(isset($_SESSION['valid'])) {
@@ -66,7 +66,7 @@ if(isset($_POST['submit'])) {
 			</tr>
 			<tr height="80px"> 
 				<td>&nbsp;</td>
-				<td><input id="button" type="submit" name="submit" value="Login"></td>
+				<td><input id="button" type="submit" name="submit" value="Masuk"></td>
 			</tr>
 		</table>
 	</form>
